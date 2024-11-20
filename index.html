@@ -1,1 +1,108 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of [Your Name]">
+    <title>Nick Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="hero">
+        <div class="header-content">
+            <!-- Left Section -->
+            <div class="header-left">
+                <div class="logo">Nick</div>
+                <nav class="navbar">
+                    <ul class="nav-links">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- Right Section -->
+            <div class="header-right">
+                <h1>Welcome</h1>
+                <p class="subtitle">Developer | Designer | Problem Solver</p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="about" class="about">
+            <h2>About Me</h2>
+            <p> I'm a 21-year-old aspiring coder from Germany, passionate about building things with code. While I may be at the beginning of my journey, I'm driven by curiosity and a desire to learn. I’m currently teaching myself programming and working on personal projects to sharpen my skills and turn ideas into reality.
+                Every project is a step toward mastering this craft, and I'm excited to explore the endless possibilities that coding offers. Whether it's solving problems, creating something new, or improving existing systems, I enjoy the challenge and creativity involved in programming. I would love a response.</p>
+        </section>
+        <section id="projects" class="projects">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-card wide">
+                    <div class="cmd-header">
+                        <span class="cmd-circle red"></span>
+                        <span class="cmd-circle yellow"></span>
+                        <span class="cmd-circle green"></span>
+                        <span class="cmd-line-pj1"> Project 1
+                    </div>
+                    <div class="cmd-body">
+                        <div class="project-content">
+                            <img src="img/img4.jpg" alt="Project 1" class="project-image">
+                            <div class="project-description">
+                                <p>A featured project description that spans the screen width. This description highlights the purpose and details of Project 1.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-row">
+                    <div class="project-card small">
+                        <div class="cmd-header">
+                            <span class="cmd-circle red"></span>
+                            <span class="cmd-circle yellow"></span>
+                            <span class="cmd-circle green"></span>
+                            <span class="cmd-line">Project 2
+                        </div>
+                        <div class="cmd-body">
+                            <div class="project-content">
+                                <img src="img/img2.jpg" alt="Project 1" class="project-image">
+                                <div class="project-description">
+                                    <p>A featured project description that spans the screen width. This description highlights the purpose and details of Project 1.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card small">
+                        <div class="cmd-header">
+                            <span class="cmd-circle red"></span>
+                            <span class="cmd-circle yellow"></span>
+                            <span class="cmd-circle green"></span>
+                            <span class="cmd-line">Project 3
+                        </div>
+                        <div class="cmd-body">
+                            <div class="project-content">
+                                <img src="img/img3.jpg" alt="Project 1" class="project-image">
+                                <div class="project-description">
+                                    <p>A featured project description that spans the screen width. This description highlights the purpose and details of Project 1.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="other" class="other">
+            <h2>To-Do List</h2>
+            <div class="todo-container">
+                <input type="text" id="todo-input" placeholder="Enter a to-do" />
+                <button id="add-todo">Add</button>
+                <ul id="todo-list"></ul>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="screen-blur"></div>
+        <p>&copy; 2024 Nick. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
