@@ -1,0 +1,434 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+/* Theme Variables */
+}
+
+:root {
+    --bg-color: #121212; /* Dark mode background */
+    --text-color: #E0E0E0; /* Dark mode text */
+    --button-bg: #ffffff; /* Toggle button background for dark mode */
+    --button-text: #121212; /* Toggle button text color for dark mode */
+}
+
+body {
+    font-family: 'Fira Code', monospace;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Light Mode */
+.light-mode {
+    --bg-color: #F5F5F5; /* Light mode background */
+    --text-color: #121212; /* Light mode text */
+    --button-bg: #121212; /* Toggle button background for light mode */
+    --button-text: #ffffff; /* Toggle button text color for light mode */
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    background: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    z-index: 1000;
+    transition: background 0.3s, color 0.3s;
+}
+.theme-toggle:hover {
+    opacity: 0.9;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 2rem 0;
+    border-bottom: 1px solid #333;
+}
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.header-left {
+    text-align: left;
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.navbar {
+    margin-bottom: 1rem;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.nav-links li a {
+    color: #E0E0E0;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.nav-links li a:hover {
+    color: #00ADB5;
+}
+.hero-content h1 {
+    font-size: 2.5rem;
+}
+.subtitle {
+    font-style: italic;
+    color: #888;
+}
+
+/* About */
+.about {
+    max-width: 65%; /* Limit width for better alignment */
+    margin: 0 auto;   /* Center the text horizontally */
+    padding: 2rem;
+    text-align: center; /* Align text center */
+    line-height: 1.8;  /* Improve readability */
+    color: #E0E0E0;    /* Match the dark theme */
+}
+
+.about h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem; /* Adjust for balance with projects */
+}
+
+.about p {
+    text-align: justify;
+    font-size: 1rem; /* Match the size of project text */
+}
+.about, .projects {
+    padding: 2rem;
+    text-align: center;
+}
+h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+/* Projects */
+.project-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center; /* Ensures centering of all project cards */
+}
+.project-card {
+    background: #1E1E1E;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    padding: 1rem;
+    color: #CFCFCF;
+}
+
+/* Wide Project */
+.project-card.wide {
+    width: calc(100% - 4rem); /* Full width with left/right margin */
+    max-width: 1200px; /* Optional max width for large screens */
+    height: auto;
+}
+
+/* Project 2 & 3: Side by Side */
+.project-grid .project-card.small {
+    width: calc(50% - 0.75rem); /* Each project takes half width with spacing */
+    height: auto;
+}
+
+/* Row for Project 2 and 3 */
+.project-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem; /* Space between Project 2 and 3 */
+    width: calc(100% - 4rem); /* Same width as Project 1 */
+    max-width: 1200px; /* Align with Project 1 */
+}
+
+/* Command Header */
+.cmd-header {
+    background: #333;
+    padding: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-start;
+}
+.cmd-circle {
+    position: relative;
+    cursor: pointer;
+    justify-content: center;
+    transition: background 0.3s ease;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.red {
+    background: #FF5E57;
+}
+.yellow {
+    background: #FFBD2E;
+}
+.green {
+    background: #28C940;
+}
+
+/* Red Button (Close) */
+.cmd-circle.red {
+    background: #FF5E57;
+}
+.cmd-circle.red:hover {
+    background: #FF3B3B;
+}
+.cmd-circle.red::before,
+.cmd-circle.red::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1px;
+    height: 2px;
+    background: white;
+    transform: translate(-50%, -50%) rotate(45deg);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.cmd-circle.red::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.cmd-circle.red:hover::before,
+.cmd-circle.red:hover::after {
+    width: 8px;
+    opacity: 1;
+}
+
+/* Yellow Button (Minimize) */
+.cmd-circle.yellow {
+    background: #FFBD2E;
+}
+.cmd-circle.yellow:hover {
+    background: #E6AC25;
+}
+.cmd-circle.yellow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.cmd-circle.yellow:hover::before {
+    opacity: 1;
+}
+
+/* Green Button (Fullscreen) */
+.cmd-circle.green {
+    background: #28C940;
+}
+.cmd-circle.green:hover {
+    background: #22A932;
+}
+.cmd-circle.green::before {
+    content: ''; /* Fullscreen icon */
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.cmd-circle.green:hover::before {
+    opacity: 1;
+}
+.cmd-body {
+    font-family: 'Fira Code', monospace;
+    margin-top: 1rem;
+}
+.cmd-line-pj1 {
+    font-family: 'Fira Code', monospace;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 12px;
+    margin-left: 475px;
+}
+.cmd-line {
+    font-family: 'Fira Code', monospace;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 175px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    border-top: 1px solid #333;
+    color: #888;
+    margin-top: 2rem;
+}
+
+.project-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Space between image and text */
+}
+
+/* Image Styling */
+.project-image {
+    max-width: 40%; /* Image takes up 40% of the space */
+    height: auto;
+    border-radius: 5px; /* Optional: rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Optional: shadow for aesthetics */
+}
+
+/* Description Styling */
+.project-description {
+    flex: 1; /* Ensures the description takes remaining space */
+    color: #E0E0E0;
+}
+.project-description p {
+    margin: 0.5rem 0;
+}
+
+.screen-blur {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Height of the blur effect */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    pointer-events: none; /* Ensures it doesn't interfere with scrolling or clicks */
+    z-index: 1000; /* Stays on top of other content */
+}
+
+/* Hover Animation for Project Cards */
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px); /* Move slightly upward */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Add a shadow effect */
+}
+
+/* Optional: Enhance the header with hover feedback */
+.cmd-header:hover {
+    background: #444; /* Slightly lighter for feedback */
+    transition: background 0.3s ease;
+}
+
+/* Add slight hover effect for links */
+.nav-links li a:hover {
+    color: #00FFAB; /* Bright green highlight */
+    text-decoration: underline; /* Optional: add underline */
+    transition: color 0.3s ease;
+}
+
+.project-image {
+    transition: transform 0.3s ease;
+}
+
+.project-image:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.other {
+    padding: 2rem;
+    text-align: center;
+}
+
+.todo-container {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#todo-input {
+    width: 70%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+#add-todo {
+    width: 25%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #4d4d4d;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#add-todo:hover {
+    background-color: #2b2b2b;
+}
+
+/* To-Do List Styling */
+#todo-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+    gap: 1rem; /* Space between items */
+    list-style: none;
+    padding: 0;
+    margin: 1rem auto;
+    max-width: 800px; /* Optional: limit the width of the grid */
+    justify-content: center; /* Center the grid in its container */
+}
+
+#todo-list li {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Space between text and button */
+    align-items: center;
+    background: #1E1E1E;
+    color: #E0E0E0;
+    text-align: left;
+}
+
+/* Add spacing for the X button */
+#todo-list li button {
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    margin-left: 1rem; /* Creates space between text and button */
+    transition: background 0.3s ease;
+}
+
+#todo-list li button:hover {
+    background: darkred;
+}
